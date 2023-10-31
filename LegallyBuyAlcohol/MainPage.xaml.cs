@@ -20,13 +20,17 @@ namespace LegallyBuyAlcohol
             //TimeSpan timeSpan = DateTime.Now - birthDate.Date;
             double UsAge = DateTime.Now.Year - birthDate.Date.Year;
             Out_text.Text = UsAge.ToString();
-            if (UsAge >= 21 || UsAge == 0)
+            if (UsAge >= 21)
             {
                 Out_text.Text = "It's legal to drink in the United States.";
             }
+            else if(UsAge == 0)
+            {
+                Out_text.Text = "You've got 21 year(s) to go";
+            }
             else
             {
-                Out_text.Text = "You've got " + (DateTime.Now.Year - birthDate.Date.Year) + " Year(s) to go";
+                Out_text.Text = "You've got " + (DateTime.Now.Year - birthDate.Date.Year) + " year(s) to go";
                 //Out_text.Text = timeSpan.TotalDays.ToString() + " + " + timeSpan.Days.ToString();
             }
             //Out_text.Text = birthDate.Date.Year.ToString();
